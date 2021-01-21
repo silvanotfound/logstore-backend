@@ -1,5 +1,4 @@
 # logstorage
-Teste de candidatos para vagas de desenvolvedores para Cingo (www.cingo.com.br).
 
 # Pré-requisitos para execução
 1. Maven 3.6.3
