@@ -32,4 +32,10 @@ public class LogRepository extends Repository {
 	    query.setParameter("content", content);
 	    return query.getResultList();
 	}
+
+	public void deleteLog(Log log) {
+
+		super.delete(log);
+	}
+
 }

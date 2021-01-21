@@ -2,11 +2,14 @@ package com.cingo.logstore.repostory;
 
 import javax.persistence.EntityManager;
 
+import com.cingo.logstore.entity.Log;
 import com.cingo.logstore.jpa.LogStoreEntityManagerFactory;
+import org.hibernate.service.Service;
 
 public class Repository {
 
 	private EntityManager manager;
+	private Log log;
 	
 	public EntityManager getManager() {
 		if (manager == null){
@@ -31,4 +34,9 @@ public class Repository {
 		this.getManager().getTransaction().commit();
 	}
 
+	public void delete(Object o) {
+		this.getManager().getTransaction().begin();
+		this.getManager().remove(this.getManager().merge(o));
+		this.getManager().getTransaction().commit();
+	}
 }
